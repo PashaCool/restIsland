@@ -11,13 +11,15 @@ import org.springframework.stereotype.Service;
 public class CustomerHandlerService {
 
     private static final String TO = "777pashka@tut.by";
+    private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение: %s";
+    private static final String SUBJECT = "Обращение пользователя";
     private final JavaMailSender emailSender;
 
     public void handleCustomerMessage(CustomerMessage customerMessage) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(TO);
-        message.setSubject("");
-        message.setText(customerMessage.getMessage());
+        message.setSubject(SUBJECT);
+        message.setText(String.format(TEMPLATE, customerMessage.getName(), customerMessage.getPhone(), customerMessage.getMessage()));
         emailSender.send(message);
     }
 
