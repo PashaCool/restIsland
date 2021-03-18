@@ -1,0 +1,303 @@
+.header {
+	padding: 220px;
+	margin: 1px;
+	background-image: url(../img/logoostr.jpg);
+	background-repeat: no-repeat;
+	background-position:  center;
+	background-size: 100% 100%;
+	position: relative;
+	object-fit: cover;
+	
+}
+.main-menu li {
+	width: 33.333%;
+	float: left;
+	background: orange;
+	padding: 5px 0;
+	text-align: center;
+	
+}
+
+.main-menu:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.main-menu li a {
+	color: black;
+	border-bottom: none;
+	font-size: 12px;
+}
+ul.main-menu> li {position: relative;}
+ul.main-menu> li:hover .submenu {display:block;}
+
+.main-menu a{
+	display: block;
+	padding: 12px;
+}
+
+ul.submenu {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width:100%;
+	display: none;
+}
+.submenu li {
+	width: 100%;
+	color: black;
+}
+.main-menu :hover {
+	color:white;
+}
+
+
+.body-text {
+	float: right;
+	width: 200px;
+	font-size: 12px;
+	padding: 5px;
+	border: 1px solid gray;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	border-radius: 5px;
+	margin-top: 5px;
+
+}
+.body-left{
+	float: left;
+}
+.left-menu{
+	flex-wrap: wrap;
+    display: inline-flex;
+    justify-content: left;
+    float: left;
+	
+}
+.box{
+    cursor: pointer;
+    text-align: left;
+
+}
+.box img{
+	width: 270px;
+	position: relative;
+	margin: 10px 10px 0px;
+	opacity: 1;
+
+}
+
+.box img:hover{
+	
+-webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+
+}
+
+.up-menu{
+	font-size: 15px;
+	margin: 4px;
+	padding: 3px;
+}
+.poisk{
+    position:center;
+}
+footer {
+	border-top: 1px solid red ;
+
+	clear: both;
+}
+
+/*FORM (https://webformyself.com/sdelajte-sovremennye-formy-s-pomoshhyu-css3-i-validacii-html5/)*/
+body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
+.contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
+.form_hint, .required_notification {font-size: 11px;}
+
+*:focus {outline: none;}
+
+.body-title{
+	color:green;
+}
+.contact_form ul {
+ width:40px;
+ list-style-type:none;
+ list-style-position:outside;
+ margin:0px;
+ padding:0px;
+}
+.contact_form li{
+ padding:6px;
+ border-bottom:1px solid #eee;
+ position:relative;
+}
+
+.contact_form li:first-child, .contact_form li:last-child {
+ border-bottom:1px solid #777;
+}
+.contact_form label {
+ width:auto;
+ margin-top: 5px;
+ display:inline-block;
+ float:left;
+ padding:5px;
+}
+.contact_form input {
+ height:20px;
+ width:auto;
+ padding:5px 9px;
+}
+.contact_form textarea {padding:8px; padding-right:35px; width:auto;}
+.contact_form button {margin-left:6px;}
+
+/**/
+.contact_form input, .contact_form textarea {
+ border:1px solid #aaa;
+ box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+ border-radius:2px;
+}
+.contact_form input:focus, .contact_form textarea:focus {
+ background: #fff;
+ border:1px solid #555;
+ box-shadow: 0 0 3px #aaa;
+}
+/* Button Style */
+button.submit {
+ background-color: #68b12f;
+ background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+ background: -webkit-linear-gradient(top, #68b12f, #50911e);
+ background: -moz-linear-gradient(top, #68b12f, #50911e);
+ background: -ms-linear-gradient(top, #68b12f, #50911e);
+ background: -o-linear-gradient(top, #68b12f, #50911e);
+ border: 1px solid #509111;
+ border-bottom: 1px solid #5b992b;
+ border-radius: 3px;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+ -ms-border-radius: 3px;
+ -o-border-radius: 3px;
+ box-shadow: inset 0 1px 0 0 #9fd574;
+ -webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
+ -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+ -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+ -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+ color: white;
+ font-weight: bold;
+ padding: 6px 20px;
+ text-align: center;
+ text-shadow: 0 -1px 0 #396715;
+}
+button.submit:hover {
+ opacity:.85;
+ cursor: pointer;
+}
+button.submit:active {
+ border: 1px solid #20911e;
+ box-shadow: 0 0 10px 5px #356b0b inset;
+ -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+ -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+ -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+ -o-box-shadow: 0 0 10px 5px #356b0b inset;
+}
+*/
+.ju{
+	text-align: center;
+}
+#photo-tur {
+	text-align: center;
+	margin-top: 50px;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+.api-maps li {
+position: relative;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+
+}
+
+/*FOOTER*/
+
+.price{
+	text-align: center;
+}
+#price {
+	background-color: orange;
+	font-size: 12px;
+	font-weight: bold;
+}
+/*.footer-img{
+	padding: 60px;
+	background-image: url(img/turop.jpg);
+	background-repeat: repeat;
+	background-position: center;
+	background-size: cover;
+	position: center;
+	object-fit: cover;
+	max-width: 100%;
+	overflow: hidden;
+	background-size: 100% 100%;
+}
+.footer-img .backroung-image :hover
+{
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}*/
+.footer-right {
+	margin: 4px;
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	line-height: 1.2 ;
+	font-style: italic;
+}
+.footer-left {
+	margin: 10px;
+	float: left;
+	font-size: 12px;
+	line-height: 1.2 ;
+	font-style: italic;
+
+}
+.footer-center{
+	margin:10px;
+	text-align:center;
+	font-size: 25px;
+	
+}
+/*Анимация элементов социальных сетей*/
+.icon-vk {
+	opacity:1;
+}
+.icon-vk:hover{
+	opacity:0.6;
+}
+.icon-facebook {
+	opacity:1;
+}
+.icon-facebook:hover{
+	opacity:0.6;
+}
+.icon-instagram {
+	opacity:1;
+}
+.icon-instagram:hover{
+	opacity:0.6;
+}
+.icon-twitte-bird {
+	opacity:1;
+}
+.icon-twitter-bird:hover{
+	opacity:0.6;
+}
+.icon-odnoklassniki {
+	opacity:1;
+}
+.icon-odnoklassniki:hover{
+	opacity:0.6;
+}
+

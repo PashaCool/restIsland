@@ -1,0 +1,11 @@
+.reviews-headline{
+	text-align: center;
+}
+
+#sidebar{
+	width: 200px;
+	height: 300px;
+	float: left;
+	border-right: 2px solid black
+
+}
