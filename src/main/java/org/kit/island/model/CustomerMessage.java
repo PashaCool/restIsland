@@ -17,6 +17,7 @@ public class CustomerMessage {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "appeal_id")
     private Long id;
     @NotNull
     private String phone;

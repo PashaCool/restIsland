@@ -25,3 +25,5 @@ spring:
             hibernate:
                 ddl-auto: none
                 dialect: org.hibernate.dialect.PostgreSQL9Dialect
+    liquibase:
+      change-log: classpath:db/liquibase/master.xml
