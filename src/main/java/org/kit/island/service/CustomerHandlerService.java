@@ -2,6 +2,7 @@ package org.kit.island.service;
 
 import lombok.RequiredArgsConstructor;
 import org.kit.island.model.CustomerMessage;
+import org.kit.island.repository.CustomerMessageRepository;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -11,11 +12,13 @@ import org.springframework.stereotype.Service;
 public class CustomerHandlerService {
 
     private static final String TO = "777pashka@tut.by";
-    private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение: %s";
+    private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение: %s";//todo issue with enconding
     private static final String SUBJECT = "Обращение пользователя";
     private final JavaMailSender emailSender;
+    private final CustomerMessageRepository customerMessageRepository;
 
     public void handleCustomerMessage(CustomerMessage customerMessage) {
+        customerMessageRepository.save(customerMessage);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(TO);
         message.setSubject(SUBJECT);

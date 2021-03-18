@@ -18,4 +18,10 @@
         </sql>
     </changeSet>
 
+    <changeSet author="pshcharbakov" id="20210319-02">
+        <sql>
+            ALTER TABLE customer_message ALTER COLUMN appeal_id TYPE VARCHAR(36);
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
