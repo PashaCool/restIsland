@@ -48,36 +48,23 @@
 						<li><a href="визы_паспорта.html">Визы и паспорта</a>
 						<li><a href="выдача_документов.html">Выдача документов</a>
 						</ul>
+
+			<li><a href="#">Поиск</a>
+			<ul class="submenu">
 							<li><a id="agencies-trigger" href="#">Поиск авиабилета</a>
 							<script src="https://agent.aviakassa.org.ua/static/agencies/widget/embedding/widget.js"></script>
 						<script>
     					agencies.widget.init({invoker: 'agencies-trigger', agency: 2037, state: ''});
 						</script>
 						</li>
-						</ul>
-									
-													
-													<div class="up-menu">
-														<p>ТУРИСТИЧЕСКАЯ ФИРМА ОСТРОВ ОТДЫХА - ПОДБЕРЕМ ИДЕАЛЬНЫЙ ТУР ДЛЯ ВАС!
-Организация путешествия – сложный процесс, при котором нужно решить все нюансы безопасного проезда, комфортабельного проживания, регулярного питания, культурной программы, а также вопросы безопасности на территории другой страны. Для того, чтобы Ваш отдых прошел максимально приятно и интересно, советуем Вам обратиться к профессионалам.
-</p>
-														<p>
-															Достоинства сотрудничества с нами 
-Туристическое агенство «Остров отдыха» занимается продажей туров и планированием отдыха уже более 5 лет. Мы предлагаем путешественникам следующие услуги: Страхование, полноценная организация путешествий, бронирование туров, организация автобусных путешествий по различным направлениям, предоставление трансфера до аэропорта и обратно. Так же Вы можете купить и заказать авиаперелёт у нашего менеджера.
-
-														</p>
-														<p>
-															Приобрести туры и путевки в турагентстве "Остров отдыха" 
-Специалисты нашего туристической фирмы имеют многолетний опыт в сфере туристических услуг. Мы с удовольствием поможем оформить тур из Витебска, подобрать маршрут, забронировать гостиницу, Чтобы забронировать путешествие, воспользуйтесь формой поиска туров на сайте турфирмы или обратитесь к нашим менеджерам по телефону. 
-Мы поможем организовать отпуск Вашей мечты!
-
-														</p>
-														</div>
+				<li><a  href="поиск туров.html">Поиск туров</a>
+			</ul>
+		</ul>
 															<div class="body-text">
 											<ul class="body-title"> Оставьте заявку на подбор тура и наш менеджер Вам перезвонит  </ul>
 												<ul>
 													<section id="form-obr">
-														<form class="contact_form" name="contact_form" method="get" action="file.php">
+														<form class="contact_form" name="contact_form" method="post" action="http://localhost:8080/customer">
 															<br>
                                                             <div class="some-form__line">
 															<label for="mytel"> Телефон :</label>
@@ -100,53 +87,48 @@
 																	</li>
 																	<!--[if lt IE 9]><div class="popup__overlay popup__overlay_ie"></div><![endif]-->
 																</form>
+														<script>
+															// получаем объект формы
+															var form = document.forms.contact_form;
+															// прикрепляем обработчик кнопки
+															form.submit.addEventListener("click", sendRequest);
+
+															// обработчик нажатия
+															function sendRequest(event){
+
+																event.preventDefault();
+																var formData = JSON.stringify(form);
+
+																var request = new XMLHttpRequest();
+																request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+																request.open("POST", form.action);
+
+																request.onreadystatechange = function () {
+																	if (request.readyState == 4 && request.status == 200)
+																		document.getElementById("output").innerHTML=request.responseText;
+																}
+																request.send(formData);
+															}
+														</script>
 															</section>
 														</ul>
 													</div>
-														<div class="poisk">
-														     <center>
-    <script type="text/javascript">
-        function showteztourSearch() {
-            var path = 'http://json.tez-tour.com/static/ats/';
-            var now = new Date();
-            var dateTo = new Date();
-            dateTo.setDate(now.getDate()+7);
-            var monthes = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-            var teztourSearchSettings = {
-                "fromCountryId":[1102],
-                "fromCityId":[345],
-                "toCountryId":1104,
-                "departureDateMin":( now.getDate() < 10 ? "0"+now.getDate() : now.getDate() )+"."+monthes[now.getMonth()]+"."+now.getFullYear(),
-                "departureDateMax":( dateTo.getDate() < 10 ? "0"+dateTo.getDate() : dateTo.getDate() )+"."+monthes[dateTo.getMonth()]+"."+dateTo.getFullYear(),
-                "nightsMin":7,
-                "nightsMax":15,
-                "nightsLimits":[2,20],
-                "adults":2,
-                "adultsLimits":[1,12],
-                "children":0,
-                "childrenLimits":[0,12],
-                "childrenBirthday":[],
-                "priceMin":0,
-                "priceMax":9999,
-                "currency":5561,
-                "findByPrice":true,
-                "tourId":[1285],
-                "hotelClassId":[9006279, 9006280, 9006281],
-                "feedId":[9006288, 9006289],
-                "hotelId":[0],
-                "hotelInStop":false,
-                "noTicketsTo":false,
-                "noTicketsFrom":false,
-                "locale":"ru",
-                "partnerLink":"http://vashsite.ru/forma.jsp"
-            }
-            var JSON=window.JSON||{};JSON.stringify=JSON.stringify||function(obj){var t=typeof(obj);if(t!="object"||obj===null){if(t=="string")obj='"'+obj+'"';return String(obj);}else{var n,v,json=[],arr=(obj&&obj.constructor==Array);for(n in obj){v=obj[n];t=typeof(v);if(t=="string")v='"'+v+'"';else if(t=="object"&&v!==null)v=JSON.stringify(v);json.push((arr?"":'"'+n+'":')+String(v));}return(arr?"[":"{")+String(json)+(arr?"]":"}");}};var url=path+'search_'+teztourSearchSettings.locale+'.html';return('<iframe id="teztourSearchFrame" width="908" height="464" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" name='+JSON.stringify(teztourSearchSettings)+' src="'+url+'"></iframe>');
-        };
-    </script>
+															<div class="up-menu">
+																<p> &nbsp;&nbsp;ТУРИСТИЧЕСКАЯ ФИРМА ОСТРОВ ОТДЫХА - ПОДБЕРЕМ ИДЕАЛЬНЫЙ ТУР ДЛЯ ВАС!
+																	Организация путешествия – сложный процесс, при котором нужно решить все нюансы безопасного проезда, комфортабельного проживания, регулярного питания, культурной программы, а также вопросы безопасности на территории другой страны. Для того, чтобы Ваш отдых прошел максимально приятно и интересно, советуем Вам обратиться к профессионалам.
+																<p>
+																&nbsp;&nbsp;Достоинства сотрудничества с нами
+																	Туристическое агенство «Остров отдыха» занимается продажей туров и планированием отдыха уже более 5 лет. Мы предлагаем путешественникам следующие услуги: Страхование, полноценная организация путешествий, бронирование туров, организация автобусных путешествий по различным направлениям, предоставление трансфера до аэропорта и обратно. Так же Вы можете купить и заказать авиаперелёт у нашего менеджера.
 
-    <div id="teztourSearch" style="width:908px;height:464px;"><script type="text/javascript">document.write(showteztourSearch());</script></div>
-    </center>
-</div>
+																</p>
+																<p>
+																	&nbsp;&nbsp;Приобрести туры и путевки в турагентстве "Остров отдыха"
+																	Специалисты нашего туристической фирмы имеют многолетний опыт в сфере туристических услуг. Мы с удовольствием поможем оформить тур из Витебска, подобрать маршрут, забронировать гостиницу, Чтобы забронировать путешествие, воспользуйтесь формой поиска туров на сайте турфирмы или обратитесь к нашим менеджерам по телефону.
+																	Мы поможем организовать отпуск Вашей мечты!
+
+																</p>
+															</div>
+
 <iframe frameborder="0" height="131" marginheight="0" marginwidth="0" scrolling="no" src="https://admin.myfin.by/outer/informer/vitebsk/full" width="100%"></iframe>
 													
 													<div class="photo-tur"> 
@@ -212,8 +194,6 @@
 									<li><a href="#"><img src="img/thumbs/18.jpg" data-large="img/18.jpg" alt="image18" data-description="Laundering the silken figures in the brine" /></a></li>
 									<li><a href="#"><img src="img/thumbs/19.jpg" data-large="img/19.jpg" alt="image19" data-description="That season'd woe had pelleted in tears" /></a></li>
 									<li><a href="#"><img src="img/thumbs/20.jpg" data-large="img/20.jpg" alt="image20" data-description="And often reading what contents it bears" /></a></li>
-									
-
 																	</ul>
 																</div>
 															</div>
@@ -297,13 +277,17 @@
 		<p>Оставьте ваш номер телефона<br/>и наш консультант свяжется с вами</p>
 		
 		<form id="backPhone" name="backPhone">
-		   <input name="telephone" type="Tel" id="telForm"  placeholder="Введите номер телефона" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18" />
-		    <button id="telButton" type="submit" form="backPhone">Заказать обратный звонок</button>
-		     
+		   <input name="telephone" type="Tel" id="telForm"  placeholder="Введите номер телефона" data-validate required pattern="+375[0-9]{2} [0-9]{3}-[0-9]{2}-[0-9]{2}" minlength="18" maxlength="18" />
+			<script type="text/javascript">
+				jQuery(function($){
+					$("#telForm").mask("+375(99) 999-99-99");
+				});
+			</script>
+			<button id="telButton" type="submit" form="backPhone">Заказать обратный звонок</button>
 		</form>
 		
 	</div>
-	
+
 </div>
 
 
@@ -315,6 +299,7 @@
 	
 </div>
 <link rel="stylesheet" href="form/index.php">
+
 													</footer>
 											
 												</html>

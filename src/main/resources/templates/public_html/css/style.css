@@ -49,6 +49,7 @@ ul.submenu {
 }
 .main-menu :hover {
 	color:white;
+	position: relative;
 }
 
 
@@ -62,7 +63,6 @@ ul.submenu {
 	margin-right: 5px;
 	border-radius: 5px;
 	margin-top: 5px;
-
 }
 .body-left{
 	float: left;
