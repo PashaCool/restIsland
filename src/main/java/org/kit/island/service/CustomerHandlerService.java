@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class CustomerHandlerService {
 
     private static final String TO = "evg.bor.dip@gmail.com";
-    private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение: %s";//todo issue with enconding
+    private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение %s";
     private static final String SUBJECT = "Обращение пользователя";
     private final JavaMailSender emailSender;
     private final CustomerMessageRepository customerMessageRepository;
