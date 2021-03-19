@@ -88,26 +88,28 @@
 																	<!--[if lt IE 9]><div class="popup__overlay popup__overlay_ie"></div><![endif]-->
 																</form>
 														<script>
-															// получаем объект формы
-															var form = document.forms.contact_form;
-															// прикрепляем обработчик кнопки
-															form.submit.addEventListener("click", sendRequest);
-
-															// обработчик нажатия
-															function sendRequest(event){
-
+															async function submitform() {
+																alert('send json');
+																// получаем объект формы
+																var form = document.forms.contact_form;
+																// прикрепляем обработчик кнопки
+																form.submit.addEventListener("click", sendRequest);
+																// обработчик нажатия
+																function sendRequest(event){
 																event.preventDefault();
 																var formData = JSON.stringify(form);
-
 																var request = new XMLHttpRequest();
 																request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 																request.open("POST", form.action);
-
 																request.onreadystatechange = function () {
 																	if (request.readyState == 4 && request.status == 200)
 																		document.getElementById("output").innerHTML=request.responseText;
 																}
 																request.send(formData);
+																let index = new XMLHttpRequest();
+																index.open("GET", 'http://localhost:8080/index');
+																index.send();
+																}
 															}
 														</script>
 															</section>
