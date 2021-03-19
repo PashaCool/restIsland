@@ -17,13 +17,13 @@ public class CustomerHandlerController {
     private final CustomerHandlerService customerHandlerService;
 
     @PostMapping("/customer")
-    public String handleCustomerMessage(@RequestParam Map<String, String> body) {
+    public void handleCustomerMessage(@RequestParam Map<String, String> body) {
         CustomerMessage customerMessage = new CustomerMessage();
         customerMessage.setName(body.get("myname"));
         customerMessage.setPhone(body.get("phone"));
         customerMessage.setMessage(body.get("mytext"));
         customerHandlerService.handleCustomerMessage(customerMessage);
-        return "redirect:index";
+//        return "forward:/static/index.html";
     }
 
     @GetMapping("/index")
