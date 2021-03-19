@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CustomerHandlerService {
 
-    private static final String TO = "777pashka@tut.by";
+    private static final String TO = "evg.bor.dip@gmail.com";
     private static final String TEMPLATE = "Пользователь %s, номер телефона %s, написал обращение: %s";//todo issue with enconding
     private static final String SUBJECT = "Обращение пользователя";
     private final JavaMailSender emailSender;
