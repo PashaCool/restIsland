@@ -1,7 +1,7 @@
 spring:
     mail:
         host: smtp.gmail.com
-        password: Tjq8old9j
+        password: 
         port: 587
         properties:
             mail:
@@ -12,7 +12,7 @@ spring:
                         enable: true
                     timeout: 5000
                     writetimeout: 5000
-        username: pawel4post@gmail.com
+        username: 
     datasource:
         url: jdbc:postgresql://localhost:5432/rest_island
         driverClassName: org.postgresql.Driver
